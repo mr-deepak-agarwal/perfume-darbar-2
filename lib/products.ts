@@ -1,0 +1,17 @@
+export type Product = { slug: string; name: string; mood: "Fresh" | "Warm" | "Floral" | "Woody"; line: string; price: number; rating: number; reviews: number; tag?: string; top: string; heart: string; base: string; desc: string; bg: string; liquid: string };
+export const money = (n: number) => new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n);
+export const sizes = [30, 50, 100] as const;
+export const sizePrice = (p: Product, s: number) => (s === 30 ? Math.round(p.price * 0.65) : s === 100 ? Math.round(p.price * 1.7) : p.price);
+export const moods = ["Fresh", "Warm", "Floral", "Woody"] as const;
+export const moodBg: Record<string, string> = { Fresh: "#9fe3d0", Warm: "#ffc65c", Floral: "#ffb3d1", Woody: "#c9b8ff" };
+export const products: Product[] = [
+  { slug: "rooftop-rain", name: "Rooftop Rain", mood: "Fresh", line: "For 9pm rooftops", price: 3499, rating: 4.8, reviews: 412, tag: "Bestseller", top: "Petrichor, lime", heart: "Green tea, jasmine", base: "Cedar, white musk", desc: "The smell of a warm roof when the first rain lands. Clean, bright and a little electric.", bg: "#9fe3d0", liquid: "#1f9d8a" },
+  { slug: "green-hour", name: "Green Hour", mood: "Fresh", line: "For morning walks", price: 2999, rating: 4.6, reviews: 189, top: "Basil, bergamot", heart: "Fig leaf, mint", base: "Vetiver, moss", desc: "Crushed leaves and cold air. An easy everyday scent that never gets loud.", bg: "#c8f27a", liquid: "#5c9a12" },
+  { slug: "chai-hour", name: "Chai Hour", mood: "Warm", line: "For slow afternoons", price: 3299, rating: 4.9, reviews: 538, tag: "New", top: "Cardamom, ginger", heart: "Black tea, cinnamon", base: "Milk accord, tonka", desc: "Spiced tea in a steel glass. Warm, creamy and instantly familiar.", bg: "#ffc65c", liquid: "#c9731a" },
+  { slug: "cold-brew", name: "Cold Brew", mood: "Warm", line: "For deadline days", price: 3799, rating: 4.7, reviews: 244, top: "Coffee, orange peel", heart: "Cacao, almond", base: "Vanilla, amber", desc: "Dark roast with a sweet finish. Wakes you up without shouting.", bg: "#f4a26b", liquid: "#6b3410" },
+  { slug: "paper-moon", name: "Paper Moon", mood: "Floral", line: "For first dates", price: 3999, rating: 4.7, reviews: 301, tag: "Bestseller", top: "Pear, pink pepper", heart: "Peony, rose", base: "Musk, sandalwood", desc: "Soft petals over clean skin. Romantic without being sweet.", bg: "#ffb3d1", liquid: "#d6407f" },
+  { slug: "neon-fig", name: "Neon Fig", mood: "Floral", line: "For weekend plans", price: 3599, rating: 4.5, reviews: 127, top: "Fig, grapefruit", heart: "Orange blossom, iris", base: "Coconut wood, musk", desc: "Juicy fig with a creamy white-flower heart. Playful and bright.", bg: "#d9b8ff", liquid: "#7a35c9" },
+  { slug: "velvet-dusk", name: "Velvet Dusk", mood: "Woody", line: "For late dinners", price: 4499, rating: 4.9, reviews: 366, top: "Saffron, plum", heart: "Oud, leather", base: "Amber, patchouli", desc: "Dark fruit, smooth leather and a long amber trail. Made for the evening.", bg: "#c9b8ff", liquid: "#2b1a66" },
+  { slug: "smoke-ghat", name: "Smoke Ghat", mood: "Woody", line: "For bonfire nights", price: 4199, rating: 4.6, reviews: 158, top: "Incense, black pepper", heart: "Sandalwood, birch", base: "Smoke, vetiver", desc: "Sandalwood smoke drifting over water. Calm, deep and grounding.", bg: "#a8c4ff", liquid: "#2b3cff" },
+];
+export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
