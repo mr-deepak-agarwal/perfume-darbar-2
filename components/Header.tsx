@@ -13,7 +13,7 @@ export default function Header() {
         <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-5 py-4">
           <nav className="hidden gap-6 text-sm font-semibold md:flex">{links.map(([l, h]) => <Link key={h} href={h} className="hover:text-blue">{l}</Link>)}</nav>
           <Link href="/shop" className="md:hidden text-sm font-semibold">Shop</Link>
-          <Link href="/" className="display text-3xl">vesper</Link>
+          <Link href="/" className="display text-xl sm:text-3xl">perfume darbar</Link>
           <div className="flex items-center justify-end gap-5 text-sm font-semibold"><Link href="/account" className="hover:text-blue">Account</Link><button onClick={() => setOpen(true)} className="border-2 border-ink bg-ink px-3 py-1.5 text-white">Bag {count}</button></div>
         </div>
       </header>

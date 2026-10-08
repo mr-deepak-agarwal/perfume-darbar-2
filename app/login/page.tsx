@@ -6,7 +6,7 @@ export default function Login() {
   const r = useRouter(); const [up, setUp] = useState(false);
   return (
     <div className="mx-auto max-w-md px-5 py-20">
-      <h1 className="text-6xl">{up ? "Join Vesper" : "Welcome back"}</h1>
+      <h1 className="text-6xl">{up ? "Join Perfume Darbar" : "Welcome back"}</h1>
       <form className="mt-8 space-y-4" onSubmit={(e) => { e.preventDefault(); r.push("/account"); }}>
         {up && <input required className="field" placeholder="Full name" aria-label="Full name" />}
         <input required type="email" className="field" placeholder="Email" aria-label="Email" />

@@ -16,7 +16,7 @@ export default function Checkout() {
   const s = (k: string) => (v: string) => setF((o) => ({ ...o, [k]: v }));
   const ship = f.ship === "exp" ? 199 : subtotal >= 1999 ? 0 : 99;
   if (!lines.length) return <div className="mx-auto max-w-xl px-5 py-24 text-center"><h1 className="text-6xl">Nothing to check out</h1><Link href="/shop" className="btn mt-8">Shop all scents</Link></div>;
-  const submit = (e: React.FormEvent) => { e.preventDefault(); if (step < 2) return setStep(step + 1); const id = "VS" + Math.floor(100000 + Math.random() * 900000); clear(); router.push(`/checkout/success?order=${id}`); };
+  const submit = (e: React.FormEvent) => { e.preventDefault(); if (step < 2) return setStep(step + 1); const id = "PD" + Math.floor(100000 + Math.random() * 900000); clear(); router.push(`/checkout/success?order=${id}`); };
   return (
     <form onSubmit={submit} className="mx-auto max-w-6xl px-5 py-12">
       <h1 className="text-6xl">Checkout</h1>

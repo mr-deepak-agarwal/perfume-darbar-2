@@ -3,7 +3,7 @@ import ProductCard from "@/components/ProductCard";
 import ProductView from "./ProductView";
 import { getProduct, products } from "@/lib/products";
 export function generateStaticParams() { return products.map((p) => ({ slug: p.slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) { const p = getProduct((await params).slug); return { title: p ? `${p.name} | Vesper` : "Not found" }; }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) { const p = getProduct((await params).slug); return { title: p ? `${p.name} | Perfume Darbar` : "Not found" }; }
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const p = getProduct((await params).slug);
   if (!p) notFound();
